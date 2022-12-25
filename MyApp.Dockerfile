@@ -1,9 +1,9 @@
 FROM node:16.13-alpine
 
-COPY ./package.json ./package.json
+COPY my-app/package.json ./package.json
 RUN npm i
 
-COPY . .
+COPY my-app .
 
 EXPOSE 3000
 
