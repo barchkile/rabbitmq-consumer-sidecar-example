@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: queues-definitions
+data:
+  queues-definitions.json: |-
+    {
+      "Queues": {
+        "my-cool-queue": {
+          "FailurePolicy": "Retry"
+        }
+      },
+      "Consumers": {
+        "my-app": {
+          "ConsumerQueues": {
+            "my-cool-queue": {
+              "MaxConcurrentConsumes": 20
+            }
+          }
+        }
+      }
+    }
